@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Cover AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <!-- Możesz tu dodać logo -->
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-page="vocal-remover"><span>🎤</span> 去人声</li>
+                    <li data-page="instrument-separator"><span>🎚️</span> 分离器</li>
+                    <li data-page="pitch-shifter"><span>↕️</span> 变调器</li>
+                    <li data-page="bpm-key-finder"><span>🎼</span> 查BPM 查KEY</li>
+                    <li data-page="cutter"><span>✂️</span> 剪辑器</li>
+                    <li data-page="merger"><span>🔗</span> 合并器</li>
+                    <li data-page="recorder"><span>🎙️</span> 录音</li>
+                    <li data-page="karaoke"><span>⭐</span> 卡拉OK</li>
+                </ul>
+            </nav>
+            <div class="sidebar-help">
+                <a href="#"><span>❓</span> 帮助</a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <div class="top-banner">
+                ✨ 新版本升级了算法 — 目前仅对订阅用户开放。 -> <a href="#">体验</a> ✨
+            </div>
+            <div class="page-content">
+                <section class="tool-page active-page" id="vocal-remover">
+                    <div class="page-tabs">
+                        <button class="tab-button active" data-tab="how-it-works">工作方式</button>
+                        <button class="tab-button" data-tab="edit">编辑</button>
+                    </div>
+                    <div class="tab-content active-tab-content" id="vocal-remover-how-it-works">
+                        <h1>移除人声并隔离</h1>
+                        <p>用强大的人工智能算法将声音从音乐中分离出来</p>
+                        <div class="waveform-container">
+                            <div class="waveform-track">
+                                <span class="track-label">音乐</span>
+                                <div class="waveform" id="vr-music-waveform"></div>
+                            </div>
+                            <div class="waveform-track">
+                                <span class="track-label">人声</span>
+                                <div class="waveform" id="vr-vocals-waveform"></div>
+                            </div>
+                        </div>
+                        <button class="select-file-button">选择文件</button>
+                    </div>
+                    <div class="tab-content" id="vocal-remover-edit">
+                        <!-- 编辑内容区域 -->
+                        <p>编辑功能区</p>
+                    </div>
+                </section>
+
+                <section class="tool-page" id="instrument-separator">
+                    <div class="page-tabs">
+                        <button class="tab-button active" data-tab="how-it-works">工作方式</button>
+                        <button class="tab-button" data-tab="edit">编辑</button>
+                    </div>
+                    <div class="tab-content active-tab-content" id="instrument-separator-how-it-works">
+                        <h1>乐器分离器</h1>
+                        <p>用AI驱动的算法将音乐分割成不同的部分</p>
+                        <div class="waveform-container">
+                            <div class="waveform-track">
+                                <span class="track-label">音乐</span>
+                                <div class="waveform" id="is-music-waveform"></div>
+                            </div>
+                            <div class="waveform-track">
+                                <span class="track-label">人声</span>
+                                <div class="waveform" id="is-vocals-waveform"></div>
+                            </div>
+                            <div class="waveform-track">
+                                <span class="track-label">低音</span>
+                                <div class="waveform" id="is-bass-waveform"></div>
+                            </div>
+                            <div class="waveform-track">
+                                <span class="track-label">鼓</span>
+                                <div class="waveform" id="is-drums-waveform"></div>
+                            </div>
+                        </div>
+                        <button class="select-file-button">选择文件</button>
+                    </div>
+                     <div class="tab-content" id="instrument-separator-edit">
+                        <!-- 编辑内容区域 -->
+                        <p>编辑功能区</p>
+                    </div>
+                </section>
+                
+                <!-- 其他工具页面可以按需添加 -->
+                <section class="tool-page" id="pitch-shifter"><p>变调器页面内容</p></section>
+                <section class="tool-page" id="bpm-key-finder"><p>查BPM 查KEY页面内容</p></section>
+                <section class="tool-page" id="cutter"><p>剪辑器页面内容</p></section>
+                <section class="tool-page" id="merger"><p>合并器页面内容</p></section>
+                <section class="tool-page" id="recorder"><p>录音页面内容</p></section>
+                <section class="tool-page" id="karaoke"><p>卡拉OK页面内容</p></section>
+            </div>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 

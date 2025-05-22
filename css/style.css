@@ -1,0 +1,224 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #1E1E2D; /* 深色背景 */
+    color: #E0E0E0; /* 浅色文字 */
+    height: 100%;
+    overflow: hidden; /* 防止滚动条 */
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: #27293D; /* 侧边栏背景色 */
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-logo {
+    /* 根据需要添加logo样式 */
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #3A3C58;
+    margin-bottom: 20px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    padding: 15px 25px;
+    cursor: pointer;
+    color: #A0A3C1;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 图标和文字的间距 */
+    font-size: 16px;
+}
+
+.sidebar-nav li:hover,
+.sidebar-nav li.active {
+    background-color: #3A3C58; /* 激活/悬停背景色 */
+    color: #FFFFFF; /* 激活/悬停文字颜色 */
+    border-left: 3px solid #6C63FF; /* 激活指示条 */
+    padding-left: 22px; /* 补偿边框 */
+}
+
+.sidebar-nav li span {
+    font-size: 20px; /* 图标大小 */
+}
+
+.sidebar-help {
+    margin-top: auto; /* 将帮助链接推到底部 */
+    padding: 20px 25px;
+    border-top: 1px solid #3A3C58;
+}
+
+.sidebar-help a {
+    color: #A0A3C1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-help a:hover {
+    color: #FFFFFF;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #1E1E2D;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 如果内容过多，允许主内容区域滚动 */
+}
+
+.top-banner {
+    background-color: #27293D; /* 横幅背景色 */
+    color: #E0E0E0;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #3A3C58;
+}
+
+.top-banner a {
+    color: #8A8AFF; /* 链接颜色 */
+    text-decoration: none;
+}
+
+.top-banner a:hover {
+    text-decoration: underline;
+}
+
+.page-content {
+    padding: 30px 40px;
+    flex-grow: 1;
+}
+
+.tool-page {
+    display: none; /* 默认隐藏所有页面 */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tool-page.active-page {
+    display: block; /* 显示活动页面 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tool-page h1 {
+    color: #FFFFFF;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.tool-page p {
+    color: #A0A3C1;
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.page-tabs {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #3A3C58;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: #A0A3C1;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 2px solid transparent; /* 底部边框占位 */
+    margin-right: 5px;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    color: #FFFFFF;
+    border-bottom: 2px solid #6C63FF; /* 激活/悬停标签的下划线 */
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active-tab-content {
+    display: block;
+}
+
+.waveform-container {
+    background-color: #27293D; /* 波形容器背景 */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.waveform-track {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.waveform-track:last-child {
+    margin-bottom: 0;
+}
+
+.track-label {
+    color: #A0A3C1;
+    width: 60px; /* 标签宽度 */
+    font-size: 14px;
+}
+
+.waveform {
+    height: 60px; /* 波形高度 */
+    flex-grow: 1;
+    background-color: #3A3C58; /* 波形背景，实际波形将通过JS绘制或用图片代替 */
+    border-radius: 4px;
+    /* 临时添加一些样式模拟波形 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 模拟波形 */
+#vr-music-waveform { background-image: linear-gradient(to right, #4CAF50, #8BC34A, #4CAF50, #CDDC39, #4CAF50); }
+#vr-vocals-waveform { background-image: linear-gradient(to right, #2196F3, #64B5F6, #2196F3, #90CAF9, #2196F3); }
+#is-music-waveform { background-image: linear-gradient(to right, #4CAF50, #8BC34A, #4CAF50, #CDDC39, #4CAF50); }
+#is-vocals-waveform { background-image: linear-gradient(to right, #2196F3, #64B5F6, #2196F3, #90CAF9, #2196F3); }
+#is-bass-waveform { background-image: linear-gradient(to right, #FFC107, #FFD54F, #FFC107, #FFECB3, #FFC107); }
+#is-drums-waveform { background-image: linear-gradient(to right, #F44336, #EF9A9A, #F44336, #FFCDD2, #F44336); }
+
+
+.select-file-button {
+    background-color: #6C63FF; /* 按钮主色 */
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.select-file-button:hover {
+    background-color: #574fd8; /* 按钮悬停颜色 */
+} 
